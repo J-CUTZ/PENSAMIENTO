@@ -1,0 +1,21 @@
+#Pedimos los datos al usuario
+año=int(input("Ingrese el año del vehiculo:"))
+placa=input("Ingrese el numero de placa:")
+
+#Obtenemos el ultimo digito de la placa
+ultimo_digito=int(placa[-1])
+
+#Verifiquemos las restricciones
+
+if año>=2001:
+    if ultimo_digito in [0,2,4,6,8]:
+        print("No circula los lunes.")
+    elif ultimo_digito in [1,3,5,7,9]:
+        print("No circula los viernes.")
+        
+    if año % 2==0:
+        print("Restriccion adicional: los sabados solo circula hasta el mediodía")
+        
+#Verifiquemos que el carro no tenga más de 25 años
+if 2025-año>25:
+    print("Advertencia: Mantenimiento obligado.")
